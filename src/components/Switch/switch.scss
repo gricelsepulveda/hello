@@ -1,0 +1,46 @@
+@import "../../styles/common/vars.scss";
+@import "../../styles/common/mixins.scss";
+
+.switch {
+  height: 36px;
+  width: 64px;
+  border-radius: 18px;
+  position: relative;
+  background-color: $color-4;
+  box-sizing: border-box;
+  button {
+    border: 0;
+    border-radius: 18px;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    cursor: pointer;
+    left: 0px;
+    top: 0px;
+    @include animate;
+    background-color: $color-2;
+    outline: 0;
+    @include shadow; 
+    &:hover, &:focus {
+        outline: 0;
+    }
+    &:after {
+      color: $white;
+      font-size: 12px;
+      font-weight: 800;
+      content: "ES"
+    }
+  }
+  &.active {
+      button {
+          left: 28px;
+          @include flex-row-center;
+          &:after {
+            color: $white;
+            font-size: 12px;
+            font-weight: 800;
+            content: "EN"
+          }
+      }
+  }
+}

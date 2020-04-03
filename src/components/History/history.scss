@@ -1,0 +1,123 @@
+@import "../../styles/common/vars.scss";
+@import "../../styles/common/mixins.scss";
+
+.history {
+  width: 100%;
+  @include flex-col-center;
+  @include animate;
+  min-height: 250px;
+  .text-banner{
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+    font: {
+      size: 16px;
+      weight: 400;
+    }
+    color: $white;
+    background-color: $color-4;
+    width: 320px;
+    position: relative;
+    @include animate;
+    @media #{$sm}{
+      width: 240px;
+      padding: 10px;
+      margin-top: 0px;
+    }
+    &:after{
+      content: "";
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      border-radius: 32px;
+      left: -32px;
+      bottom: -32px;
+      position: absolute;
+      background: {
+        color: $white;
+        size: 110% auto;
+        position: center;
+        repeat: no-repeat;
+      }
+      @media #{$sm}{
+        width: 42px;
+        height: 42px;
+        border-radius: 21px;
+        left: -21px;
+        bottom: -21px;
+      }
+    }
+    @media #{$sm}{
+      max-width: 280px;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      &.active{
+        opacity: 1;
+        @include animate;
+      }
+    }
+  }
+  &.section-0{
+    .text-banner {
+      &:after{
+        background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_gricel-o.svg");
+      }
+    }
+  }
+  &.section-1{
+    .text-banner {
+      &:after{
+        background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_gricel-normal.svg");
+      }
+    }
+  }
+  &.section-2{
+    .text-banner {
+      &:after{
+        background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_gricel-happy.svg");
+      }
+    }
+  }
+  .text-banner-buttons {
+    @include flex-row-center;
+    @include clean-list;
+    @include zero-hard;
+    margin-top: 20px!important;
+    li {
+      cursor: pointer;
+      @include clean-list;
+      @include zero-hard;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      margin-right: 10px!important;
+      background-color: $color-4;
+      position: relative;
+      @include animate;
+      &:after{
+        content: "";
+        display: inline-block;
+        background-color: transparent;
+        opacity: 0.35;
+        filter: blur(5px);
+        width: 32px;
+        height: 32px;
+        border-radius: 18px;
+        left: -4px;
+        top: -4px;
+        position: absolute;
+        @include animate;
+      }
+      &.active{
+        background-color: $color-2;
+        &:after{
+          background-color: $color-2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../styles/common/vars.scss";
+@import "../../styles/common/mixins.scss";
+
+.nav-history{
+  margin-top: 60px;
+  @media #{$sm}{
+    margin-top: 20px;
+    position: fixed;
+    bottom: 40px;
+    left: calc(50% - 130px);
+  }
+  ul{
+    width: 320px;
+    @include clean-list;
+    @include zero-hard;
+    @include flex-row-center;
+    justify-content: space-between;
+    height: 42px;
+    border-radius: 21px;
+    background-color: $color-4;
+    @media #{$sm}{
+      width: 260px;
+    }
+    li{
+      top: 21px!important;
+      @include clean-list;
+      @include zero-hard;
+      @include flex-col-center;
+      position: relative;
+      button{
+        width: 36px;
+        height: 36px;
+        border: 0;
+        border-radius: 18px;
+        outline: 0;
+        cursor: pointer;
+        background: {
+          color: $black;
+          size: auto 40%;
+          position: center;
+          repeat: no-repeat;
+        }
+        position: relative;
+        &:active, &:focus {
+          outline: 0;
+        }
+        &:after{
+          content: "";
+          display: inline-block;
+          background-color: transparent;
+          opacity: 0.35;
+          filter: blur(5px);
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          left: -6px;
+          top: -6px;
+          position: absolute;
+          @include animate;
+        }
+      }
+      p {
+        color: $color-4;
+        font: {
+          size: 14px;
+          weight: 800;
+        }
+        text: {
+          align: center;
+          transform: uppercase;
+        }
+        @media #{$sm}{
+          font-size: 12px;
+        }
+      }
+      &.active{
+        p{
+          color: $white;
+        }
+        button{
+          background-color: $color-3;
+          &:after{
+            background-color: $color-3;
+          }
+        }
+      }
+      &:nth-of-type(1){
+        left: -17px!important;
+        button {
+          background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_question.svg");
+        }
+      }
+      &:nth-of-type(2){
+        button {
+          background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_ux.svg");
+        }
+      }
+      &:nth-of-type(3){
+        right: -10px!important;
+        button {
+          background-image: url("https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_dev.svg");
+        }
+      }
+    }
+  }
+}

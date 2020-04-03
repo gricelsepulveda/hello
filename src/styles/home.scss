@@ -1,0 +1,240 @@
+@import "./common/vars.scss";
+@import "./common/mixins.scss";
+
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: $black;
+  font-family: "Ubuntu Mono", "Arial", sans-serif;
+  @include flex-col-center;
+}
+
+#root{
+  @include flex-col-center;
+}
+
+.navbar{
+  width: 100%;
+  height: 48px;
+  background-color: $color-1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @media #{$sm}{
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: flex-start;
+  }
+  span {
+    margin-right: 20px;
+    color: $white;
+    font: {
+      size: 14px;
+      weight: 400;
+    }
+    @media #{$sm}{
+      display: none;
+    }
+  }
+  .social-media{
+    @include clean-list;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    .social-media-link{
+      width: 36px;
+      height: 36px;
+      display: flex;
+      @include flex-row-center;
+      @include zero-hard;
+      margin-right: 5px!important;
+      a{
+        text-decoration: none;
+        @include flex-row-center;
+        button{
+          cursor: pointer;
+          border: 0;
+          width: 36px;
+          height: 36px;
+          border-radius: 18px;
+          background-color: transparent;
+          background: {
+            size: 60% auto;
+            position: center;
+            repeat: no-repeat;
+          }
+          @include flex-row-center;
+          @include animate;
+          img{
+            width: 28px;
+          }
+        }
+      }
+      &.linkedin{
+        a{
+          button{
+            background-color: $linkedin;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_linkedin.svg);
+            }
+            &:hover {
+              background-color: lighten($linkedin, 10%);
+            }
+          }
+        }
+      }
+      &.twitter{
+        a{
+          button{
+            background-color: $twitter;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_twitter.svg);
+            }
+            &:hover {
+              background-color: lighten($twitter, 10%);
+            }
+          }
+        }
+      }
+      &.instagram{
+        a{
+          button{
+            background-color: $instagram;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_instagram.svg);
+            }
+            &:hover {
+              background-color: lighten($instagram, 10%);
+            }
+          }
+        }
+      }
+      &.whatsapp{
+        a{
+          button{
+            background-color: $whatsapp;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_whatsapp.svg);
+            }
+            &:hover {
+              background-color: lighten($whatsapp, 10%);
+            }
+          }
+        }
+      }
+      &.facebook{
+        a{
+          button{
+            background-color: $facebook;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_facebook.svg);
+            }
+            &:hover {
+              background-color: lighten($facebook, 10%);
+            }
+          }
+        }
+      }
+      &:last-of-type{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.presentation{
+  width: 100%;
+  @include flex-col-center;
+  .logo{
+    height: 80px;
+    @media #{$sm}{
+      height: 60px;
+    }
+  }
+  h1, h2 {
+    @include clean-webkit;
+    @include zero-hard;
+    color: $white;
+  }
+  h1{
+    text-align: center;
+    margin-top: 10px!important;
+    margin-bottom: 20px!important;
+    font: {
+      size: 36px;
+      weight: 600;
+    }
+    @media #{$sm}{
+      font-size: 21px;
+      margin-top: 5px!important;
+      margin-bottom: 10px!important;
+    }
+  }
+  h2{
+    text-align: center;
+    margin-top: 20px!important;
+    font: {
+      style: italic!important;
+      size: 18px;
+      weight: 300;
+    }
+    @media #{$sm}{
+      font-size: 14px;
+      margin-top: 10px!important;
+    }
+  }
+}
+
+.banner-loader{
+  width: 100vw;
+  height: 5px;
+  background-color: $color-1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    background-color: $color-3;
+  }
+}
+
+.language-selector {
+  position: fixed;
+  bottom: 20px;
+  left: 40px;
+  @include flex-row-center;
+  @media #{$sm}{
+    left: initial;
+    bottom: initial;
+    top: 5px;
+    right: 20px;
+  }
+  span {
+    color: $white;
+    display: inline-block;
+    font: {
+      size: 14px;
+      weight: 300;
+    }
+    margin-right: 5px;
+    @media #{$sm}{
+      display: none;
+    }
+  }
+}
