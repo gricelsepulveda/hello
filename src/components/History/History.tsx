@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react"
 import "./history.scss"
 
 export type HistoryProps = {
-  data:  string[]
+  data: string[]
   section: number
 }
 const History:React.FunctionComponent<HistoryProps> = (props) => {
@@ -14,7 +14,7 @@ const History:React.FunctionComponent<HistoryProps> = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setPage(page + 1 != 3 ? page + 1 : 0)
-    }, 10000)
+    }, 12000)
   }, [page])
 
   return (

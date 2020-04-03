@@ -7,7 +7,7 @@ const textDataES:string[][] = [
   ],
   //UX-UI
   [
-    "...Partí con poca timidez, primero motivada por ganar dinero para comprar mis primeros videojuegos y cosas ñoñas, acepté hacer sitio web sin saber hacerlos...",
+    "...Partí con poca timidez, primero motivada por ganar dinero para comprar mis primeros videojuegos y cosas ñoñas, acepté hacer sitios web sin saber hacerlos...",
     "...Lloré, me enojé, hice dinero y de pronto me di cuenta que ya sabía hacer sitios web, desde el UI hasta el código. Tuve profesores muy buenos que me ayudaron a mejorar esos sitios mostrándome el mundo del UX...",
     "...Cuando tenía un cliente siempre terminaba contratando a algún programador para que hiciera las cosas que yo no sabía hacer en mis sitios (como mandar un formulario de contacto (sí los famosos formularios jaja) y tuve buenas experiencias y muchas malas..."
   ],
