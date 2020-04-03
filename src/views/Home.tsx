@@ -67,6 +67,16 @@ const Home:React.FunctionComponent = () => {
               <button></button>
             </a>
           </li>
+          <li className="social-media-link github">
+            <a href="https://cli.re/YMj9nV" target="_blank">
+              <button></button>
+            </a>
+          </li>
+          <li className="social-media-link behance">
+            <a href="https://cli.re/JvkE2M" target="_blank">
+              <button></button>
+            </a>
+          </li>
         </ul>
       </nav>
       <section className="presentation">

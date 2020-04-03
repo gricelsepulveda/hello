@@ -32,9 +32,9 @@ body{
   top: 0;
   left: 0;
   @media #{$sm}{
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: flex-start;
+    padding-left: 0px;
+    padding-right: 0px;
+    justify-content: center;
   }
   span {
     margin-right: 20px;
@@ -54,6 +54,9 @@ body{
     justify-content: flex-end;
     align-items: center;
     align-content: center;
+    @media #{$sm}{
+      justify-content: center;
+    }
     .social-media-link{
       width: 36px;
       height: 36px;
@@ -61,6 +64,14 @@ body{
       @include flex-row-center;
       @include zero-hard;
       margin-right: 5px!important;
+      @media #{$sm}{
+        width: 28px;
+        height: 28px;
+        margin-right: 15px!important;
+        &:last-of-type{
+          margin-right: 0px!important;
+        }
+      }
       a{
         text-decoration: none;
         @include flex-row-center;
@@ -80,6 +91,14 @@ body{
           @include animate;
           img{
             width: 28px;
+          }
+          @media #{$sm}{
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            img{
+              width: 18px;
+            }
           }
         }
       }
@@ -144,6 +163,32 @@ body{
             }
             &:hover {
               background-color: lighten($facebook, 10%);
+            }
+          }
+        }
+      }
+      &.behance{
+        a{
+          button{
+            background-color: $behance;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_behance.svg);
+            }
+            &:hover {
+              background-color: lighten($behance, 10%);
+            }
+          }
+        }
+      }
+      &.github{
+        a{
+          button{
+            background-color: $github;
+            background: {
+              image: url(https://gricel.sfo2.digitaloceanspaces.com/iusedtohatecode/icon_github.svg);
+            }
+            &:hover {
+              background-color: lighten($github, 10%);
             }
           }
         }
@@ -222,8 +267,8 @@ body{
   @media #{$sm}{
     left: initial;
     bottom: initial;
-    top: 5px;
-    right: 20px;
+    top: 60px;
+    right: 10px;
   }
   span {
     color: $white;
